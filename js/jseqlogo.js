@@ -13,7 +13,7 @@ function sequence_logo(element, width, height, columns, options) {
 		"padding": 6,
 		"labelfont": "14px Arial,sans-serif",
 		"letterfont": "30px Arial,sans-serif",
-		"fontpixelheight": 22,
+		"fontpixelheight": 24,
 		"ymax": 0,
 		"sort": true
 	};
