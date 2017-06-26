@@ -57,7 +57,7 @@ function sequence_logo(element, width, height, columns, options) {
 			var letter = column[i][0];
 			var weight = column[i][1];
 			totalweight += weight;
-			ctx.save()
+			ctx.save();
 			ctx.fillStyle = settings.colors[letter];
 			ctx.translate(columnx, lettery);
 			var scaley = (yheight * weight) / (settings.fontpixelheight * ymax);
@@ -65,8 +65,8 @@ function sequence_logo(element, width, height, columns, options) {
 			var letterwidth = mt.width;
 			var scalex = columndelta / letterwidth;
 			ctx.scale(scalex, scaley);
-			ctx.fillText(letter, 0, 0)
-			ctx.restore()
+			ctx.fillText(letter, 0, 0);
+			ctx.restore();
 			lettery -= (weight * yheight) / ymax;
 		}
 		ctx.save();
