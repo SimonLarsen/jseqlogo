@@ -15,6 +15,7 @@ function sequence_logo(element, width, height, columns, options) {
 		"letterfont": "30px Arial,sans-serif",
 		"fontpixelheight": 22,
 		"ymax": 0,
+		"sort": true
 	};
 
 	var settings = {};
@@ -48,7 +49,9 @@ function sequence_logo(element, width, height, columns, options) {
 	for (var col = 0; col < columns.length; col++) {
 		var totalweight = 0.0;
 		var column = columns[col].slice();
-		column.sort(function(a, b) { return a[1] - b[1]; });
+		if(settings.sort) {
+			column.sort(function(a, b) { return a[1] - b[1]; });
+		}
 		var lettery = yheight;
 		for (var i = 0; i < column.length; i++) {
 			var letter = column[i][0];
