@@ -46,15 +46,15 @@ function sequence_logo(element, width, height, columns, options) {
         settings[p] = (options[p] == null) ? defaults[p] : options[p];
     }
 
-    var letters = Object.keys(data);
-    var ncols = data[letters[0]].length;
+    var letters = Object.keys(columns);
+    var ncols = columns[letters[0]].length;
 
     // collect stats on columns
     var ymax = settings.ymax;
     for(var i = 0; i < ncols; i++) {
         var colsum = 0;
         for(var j = 0; j < letters.length; j++) {
-            colsum += data[letters[j]][i];
+            colsum += columns[letters[j]][i];
         }
         if(colsum > ymax) ymax = colsum;
     }
@@ -76,7 +76,7 @@ function sequence_logo(element, width, height, columns, options) {
         var totalweight = 0.0;
         var lettery = yheight;
 
-        var values = letters.map(function(letter) { return data[letter][col]; })
+        var values = letters.map(function(letter) { return columns[letter][col]; })
         if(settings.sort) {
             var order = sort_order(values);
         } else {
@@ -85,7 +85,7 @@ function sequence_logo(element, width, height, columns, options) {
 
         for(var i = 0; i < letters.length; i++) {
             var letter = letters[order[i]];
-            var weight = data[letter][col];
+            var weight = columns[letter][col];
 
             if(weight > 0) {
                 totalweight += weight;
